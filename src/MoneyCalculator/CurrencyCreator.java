@@ -1,5 +1,7 @@
 
-package moneycalculator;
+package MoneyCalculator;
+
+import MoneyCalculator.Currency;
 
 
 public interface CurrencyCreator {

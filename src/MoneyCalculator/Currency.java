@@ -1,5 +1,5 @@
 
-package moneycalculator;
+package MoneyCalculator;
 
 
 public class Currency {

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package moneycalculator;
+package MoneyCalculator;
 
+import MoneyCalculator.Currency;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,7 +22,7 @@ public class ExchangeRate {
     public double getExchangeRate(Currency from, Currency to) throws IOException {
         URL url = 
             new URL("https://free.currconv.com/api/v7/convert?q=" +
-                    from.getName() + "_" + to.getName() + "&compact=ultra&apiKey=fa5ad92e60462b5ef4ab");
+                    from.getName() + "_" + to.getName() + "&compact=ultra&apiKey=a600768752b260e45e04");
         URLConnection connection = url.openConnection();
         try (BufferedReader reader = 
                 new BufferedReader(
