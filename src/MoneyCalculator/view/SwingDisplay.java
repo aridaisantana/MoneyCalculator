@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MoneyCalculator;
+package MoneyCalculator.view;
 
+import MoneyCalculator.model.Currency;
+import MoneyCalculator.model.ExchangeRate;
+import MoneyCalculator.model.Money;
+import MoneyCalculator.view.Display;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;

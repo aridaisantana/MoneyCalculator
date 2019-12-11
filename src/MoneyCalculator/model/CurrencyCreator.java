@@ -1,7 +1,7 @@
 
-package MoneyCalculator;
+package MoneyCalculator.model;
 
-import MoneyCalculator.Currency;
+import MoneyCalculator.model.Currency;
 
 
 public interface CurrencyCreator {

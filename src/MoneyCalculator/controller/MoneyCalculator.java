@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MoneyCalculator;
+package MoneyCalculator.controller;
 
+import MoneyCalculator.model.Currency;
+import MoneyCalculator.model.CSVCurrencyCreator;
+import MoneyCalculator.view.SwingDisplay;
 import java.io.IOException;
 import java.util.Scanner;
 

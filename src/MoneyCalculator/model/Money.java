@@ -1,7 +1,5 @@
 
-package MoneyCalculator;
-
-import MoneyCalculator.Currency;
+package MoneyCalculator.model;
 
 
 public class Money {
