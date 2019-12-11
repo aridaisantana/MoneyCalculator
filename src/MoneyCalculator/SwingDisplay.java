@@ -23,7 +23,7 @@ import javax.swing.JTextField;
  *
  * @author aridai
  */
-public class MoneyCalculatorDisplay extends JFrame  {
+public class SwingDisplay extends JFrame implements Display  {
     
     private final Currency [] currencies;
     private JLabel amountLabel;
@@ -33,35 +33,14 @@ public class MoneyCalculatorDisplay extends JFrame  {
     private JTextField amountText;
     private JTextField result;
     
-    public MoneyCalculatorDisplay( final Currency [] currencies){
+    public SwingDisplay( final Currency [] currencies){
         this.currencies = currencies;
         setTitle("Money Calculator");
         
-        amountLabel = new JLabel("Amount:");
-        done = new JButton("Exchange");
-        amountText = new JTextField(10);
-        result = new JTextField(10);
-        firstComboCurrency = new JComboBox();
-        for (int i = 0; i < currencies.length; i++) {
-            firstComboCurrency.addItem(currencies[i].getName());
-            
-        }
+        iniciarComponentes();
+        createPanel();
         
-        secondComboCurrency = new JComboBox();
-        for (int i = 0; i < currencies.length; i++) {
-            secondComboCurrency.addItem(currencies[i].getName());
-            
-        }
         
-        JFrame frame = new JFrame();
-        Container panel = getContentPane();
-	panel.setLayout(new FlowLayout());
-        panel.add(amountLabel);
-        panel.add(amountText);
-        panel.add(firstComboCurrency);
-        panel.add(secondComboCurrency);
-        panel.add(done);
-        panel.add(result);
         
         done.addActionListener(new ActionListener() {
         @Override
@@ -97,7 +76,8 @@ public class MoneyCalculatorDisplay extends JFrame  {
                     System.out.println(ex.getMessage());
                 }
                 double exchange = money.getAmount() * exchangeRate;
-                result.setText(Double.toString(exchange));
+                result.setText(String.format("%.2f", exchange));
+         
             }
         });
 
@@ -106,16 +86,46 @@ public class MoneyCalculatorDisplay extends JFrame  {
         
     
         
-        this.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        pack();
+        
     }
     
     public void display( ){
         this.setVisible(true);
     }
 
-  
+    public void iniciarComponentes(){
+        amountLabel = new JLabel("Amount:");
+        done = new JButton("Exchange");
+        amountText = new JTextField(10);
+        result = new JTextField(10);
+        firstComboCurrency = new JComboBox();
+        for (int i = 0; i < currencies.length; i++) {
+            firstComboCurrency.addItem(currencies[i].getName());
+            
+        }
+        
+        secondComboCurrency = new JComboBox();
+        for (int i = currencies.length - 1; i >= 0; i--) {
+            secondComboCurrency.addItem(currencies[i].getName());
+            
+        }
+    }
+    
+    public void createPanel(){
+        
+        JFrame frame = new JFrame();
+        Container panel = getContentPane();
+	panel.setLayout(new FlowLayout());
+        panel.add(amountLabel);
+        panel.add(amountText);
+        panel.add(firstComboCurrency);
+        panel.add(secondComboCurrency);
+        panel.add(done);
+        panel.add(result);
+        this.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        pack();
+    }
     
     
     

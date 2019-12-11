@@ -19,7 +19,7 @@ public class MoneyCalculator {
         
         CSVCurrencyCreator create = new CSVCurrencyCreator();
         Currency [] currencies = create.create();
-        MoneyCalculatorDisplay display = new MoneyCalculatorDisplay( currencies );
+        SwingDisplay display = new SwingDisplay( currencies );
         display.display();
     }
 
