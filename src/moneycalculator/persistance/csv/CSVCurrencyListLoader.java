@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MoneyCalculator.model;
+package moneycalculator.persistance.csv;
 
-import MoneyCalculator.model.Currency;
-import MoneyCalculator.model.CurrencyCreator;
+import moneycalculator.model.Currency;
+import moneycalculator.model.Currency;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import moneycalculator.persistance.CurrencyListLoader;
 
 /**
  *
  * @author usuario
  */
-public class CSVCurrencyCreator implements CurrencyCreator {
-    
+public class CSVCurrencyListLoader implements CurrencyListLoader { 
+
     @Override
-    public Currency [] create() {
-         
+    public Currency[] currencies() {
         Currency [] currencies = new Currency [3];
         int i = 0;
         try {
@@ -26,7 +26,7 @@ public class CSVCurrencyCreator implements CurrencyCreator {
          String line = br.readLine();
          while (null!=line) {
              String [] fields = line.split(",");
-             Currency currency = new Currency(Integer.parseInt(fields[0]), fields[1], fields[2]);
+             Currency currency = new Currency((fields[0]), fields[1], fields[2]);
              currencies[i] = currency;
              i++;
              line = br.readLine();

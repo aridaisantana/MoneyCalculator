@@ -1,5 +1,5 @@
 
-package MoneyCalculator.model;
+package moneycalculator.model;
 
 
 public class Money {

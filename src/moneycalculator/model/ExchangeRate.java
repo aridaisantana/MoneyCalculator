@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MoneyCalculator.model;
+package moneycalculator.model;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,6 +17,29 @@ import java.net.URLConnection;
  */
 public class ExchangeRate {
     
+    private final Currency from;
+    private final Currency to;
+    private final double amount;
+    
+    public ExchangeRate( Currency from, Currency to, double amount){
+        
+        this.from = from;
+        this.to = to;
+        this.amount = amount;
+        
+    }
+    
+    public Currency getFrom(){
+        return from;
+    }
+    
+    public Currency getTo(){
+        return to;
+    }
+    
+    public double getAmount(){
+        return amount;
+    }
  
     public double getExchangeRate(Currency from, Currency to) throws IOException {
         URL url = 

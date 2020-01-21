@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MoneyCalculator.view;
+package moneycalculator.persistance;
+
+import moneycalculator.model.Currency;
 
 /**
  *
  * @author aridai
  */
-public interface Display {
-    
-    public void display();
+public interface CurrencyListLoader {
+    Currency[] currencies();
     
 }
