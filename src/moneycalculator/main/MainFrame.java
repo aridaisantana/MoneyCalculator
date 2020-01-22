@@ -36,7 +36,7 @@ public class MainFrame  extends JFrame{
     public MainFrame(Currency [] currencies){
         this.currencies = currencies;
         this.setTitle("Money Calculator");
-        this.setSize(400,400);
+        this.setSize(300,150);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.add(moneyDialog(), BorderLayout.NORTH);

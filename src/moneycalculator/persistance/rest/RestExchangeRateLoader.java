@@ -28,7 +28,7 @@ public class RestExchangeRateLoader implements ExchangeRateLoader {
         try {
            result = new ExchangeRate(from, to, read(from.getCode(), to.getCode()));
         } catch (IOException ex) {
-       
+            System.out.println(ex.getMessage() + "\t" + "RestExchangeRateLoader Read Method Error");
         }
         
       return result;
@@ -44,6 +44,7 @@ public class RestExchangeRateLoader implements ExchangeRateLoader {
                         new InputStreamReader(connection.getInputStream()))) {
             String line = reader.readLine();
             String line1 = line.substring(11, line.indexOf("}"));
+            System.out.println(line1);
             return Double.parseDouble(line1);
         }
     }

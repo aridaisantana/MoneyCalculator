@@ -30,9 +30,10 @@ public class SwingMoneyDialog extends JPanel implements MoneyDialog {
     private final Currency[] currencies;
     
     public SwingMoneyDialog( Currency [] currencies){
+        
+        this.currencies = currencies;
         this.add(amount());
         this.add(currency());
-        this.currencies = currencies;
     }
     
     @Override
@@ -41,8 +42,10 @@ public class SwingMoneyDialog extends JPanel implements MoneyDialog {
     }
 
     private Component currency() {
-        JComboBox combo = new JComboBox(this.currencies);
-        combo.addItemListener(currencyChanged());
+        JComboBox combo = new JComboBox();
+        for (int i = 0; i < currencies.length; i++) {
+            combo.addItem(currencies[i]);
+        }
         currency = (Currency) combo.getSelectedItem();
         return combo;
     }
